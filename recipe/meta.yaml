@@ -1,5 +1,4 @@
-{% set version = '0.3-2' %}
-
+{% set version = '0.3-3' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,25 +7,24 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: RcppNumerical_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/RcppNumerical_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RcppNumerical/RcppNumerical_{{ version }}.tar.gz
-  sha256: 3f7ffd7144ffbdddf6e93b0e1c8f508ca56a187467fed1bf9850b5b834df1048
+  sha256: 58ef73db1df2c26b1663f9652bf2b43c8e057877b8d927a84e307bd3b9931c97
 
 build:
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
-# Suggests: knitr, rmarkdown, prettydoc, mvtnorm, RcppEigen
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -57,10 +55,28 @@ about:
 
 extra:
   recipe-maintainers:
-    - dpryan79
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: RcppNumerical
+# Type: Package
+# Title: 'Rcpp' Integration for Numerical Computing Libraries
+# Version: 0.3-3
+# Date: 2019-06-10
+# Authors@R: c( person("Yixuan", "Qiu", , "yixuan.qiu@cos.name", c("aut", "cre")), person("Sreekumar", "Balan", role = "aut", comment = "Numerical integration library"), person("Matt", "Beall", role = "aut", comment = "Numerical integration library"), person("Mark", "Sauder", role = "aut", comment = "Numerical integration library"), person("Naoaki", "Okazaki", role = "aut", comment = "The libLBFGS library"), person("Thomas", "Hahn", role = "aut", comment = "The Cuba library") )
+# Maintainer: Yixuan Qiu <yixuan.qiu@cos.name>
+# Description: A collection of open source libraries for numerical computing (numerical integration, optimization, etc.) and their integration with 'Rcpp'.
+# License: GPL (>= 2)
+# Copyright: See file COPYRIGHTS
+# URL: https://github.com/yixuan/RcppNumerical
+# BugReports: https://github.com/yixuan/RcppNumerical/issues
+# LazyData: TRUE
+# Imports: Rcpp
+# LinkingTo: Rcpp, RcppEigen
+# Suggests: knitr, rmarkdown, prettydoc, mvtnorm, RcppEigen
+# VignetteBuilder: knitr, rmarkdown
+# RoxygenNote: 6.1.1
+# NeedsCompilation: yes
+# Packaged: 2019-06-11 01:40:53 UTC; qyx
+# Author: Yixuan Qiu [aut, cre], Sreekumar Balan [aut] (Numerical integration library), Matt Beall [aut] (Numerical integration library), Mark Sauder [aut] (Numerical integration library), Naoaki Okazaki [aut] (The libLBFGS library), Thomas Hahn [aut] (The Cuba library)
+# Repository: CRAN
+# Date/Publication: 2019-06-11 04:30:17 UTC
