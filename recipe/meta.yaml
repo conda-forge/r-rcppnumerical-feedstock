@@ -50,11 +50,13 @@ test:
 
 about:
   home: https://github.com/yixuan/RcppNumerical
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: A collection of open source libraries for numerical computing (numerical integration,
     optimization, etc.) and their integration with 'Rcpp'.
   license_family: GPL3
-  license_file: inst/COPYRIGHTS
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - inst/COPYRIGHTS
 
 extra:
   recipe-maintainers:
