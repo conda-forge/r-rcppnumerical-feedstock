@@ -1,4 +1,4 @@
-{% set version = "0.4-0" %}
+{% set version = "0.5-0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RcppNumerical_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RcppNumerical/RcppNumerical_{{ version }}.tar.gz
-  sha256: 33e659b65b1ec05034d4f3c3fa204df396e476e49dcd3e43b650c66a287622a9
+  sha256: 596127b4d5b5b24f8ab1f61c0e26b5d290b4f1d854f91bf08759eec637020b96
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -51,8 +51,7 @@ test:
 about:
   home: https://github.com/yixuan/RcppNumerical
   license: GPL-2.0-or-later
-  summary: A collection of open source libraries for numerical computing (numerical integration,
-    optimization, etc.) and their integration with 'Rcpp'.
+  summary: A collection of open source libraries for numerical computing (numerical integration, optimization, etc.) and their integration with 'Rcpp'.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
