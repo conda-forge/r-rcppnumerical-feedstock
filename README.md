@@ -1,11 +1,22 @@
+About r-rcppnumerical-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rcppnumerical-feedstock/blob/main/LICENSE.txt)
+
 About r-rcppnumerical
-=====================
+---------------------
 
 Home: https://github.com/yixuan/RcppNumerical
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rcppnumerical-feedstock/blob/main/LICENSE.txt)
+Summary: A collection of open source libraries for numerical computing (numerical integration, optimization, etc.) and their integration with 'Rcpp'.
+About r-rcppnumerical
+---------------------
+
+Home: https://github.com/yixuan/RcppNumerical
+
+Package license: GPL-2.0-or-later
 
 Summary: A collection of open source libraries for numerical computing (numerical integration, optimization, etc.) and their integration with 'Rcpp'.
 
