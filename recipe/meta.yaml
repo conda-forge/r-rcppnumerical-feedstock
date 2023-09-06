@@ -1,4 +1,4 @@
-{% set version = "0.5-0" %}
+{% set version = "0.6-0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RcppNumerical_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RcppNumerical/RcppNumerical_{{ version }}.tar.gz
-  sha256: 596127b4d5b5b24f8ab1f61c0e26b5d290b4f1d854f91bf08759eec637020b96
+  sha256: 2f0715d68a975403e2aa3f087939542001921623bd1bb8d905ebaff05d82d786
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
