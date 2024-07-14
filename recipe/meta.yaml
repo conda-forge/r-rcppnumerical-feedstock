@@ -1,6 +1,5 @@
 {% set version = "0.6-0" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-rcppnumerical
@@ -13,8 +12,7 @@ source:
   sha256: 2f0715d68a975403e2aa3f087939542001921623bd1bb8d905ebaff05d82d786
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -25,7 +23,9 @@ requirements:
     - r-rcppeigen                # [build_platform != target_platform]
     - r-rcpp                     # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -39,7 +39,6 @@ requirements:
     - r-rcppeigen
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-rcpp
     - r-rcppeigen
 
