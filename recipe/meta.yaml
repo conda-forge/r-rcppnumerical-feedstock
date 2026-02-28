@@ -1,4 +1,4 @@
-{% set version = "0.6-0" %}
+{% set version = "0.7-0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RcppNumerical_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RcppNumerical/RcppNumerical_{{ version }}.tar.gz
-  sha256: 2f0715d68a975403e2aa3f087939542001921623bd1bb8d905ebaff05d82d786
+  sha256: 6e3717669ecbf3ed10fee3919630cd4899d6f534fee0ad9fedb9d4b006034e81
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
